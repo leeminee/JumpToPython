@@ -117,8 +117,51 @@ ex) for i in range(10):
     0 1 2 3 4 5 6 7 8 9
 """
 
+"""
+[파일 생성]
+파일 객체 = open(파일이름, 파일 열기 모드)
+※ 파일 열기 모드
+ - r : 읽기모드 - 파일을 읽기만 할 때 사용
+ - w : 쓰기모드 - 파일에 내용을 쓸 때 사용
+                - 파일이 존지할 경우 원래 있던 내용이 모두 사라짐 
+ - a : 추가모드 - 파일의 마지막에 새로운 내용을 추가 시킬 때 사용
+"""
+
+"""
+
+"""
+
 print("[ex9]")
+f = open("파일생성.txt",'w')
+for i in range(1,11):
+    data = f"{i}번째 줄입니다.\n"
+    f.write(data)
+f.close()
 print()
 
 print("[ex10]")
+f = open("파일생성.txt",'r')
+while True:
+    line = f.readline()
+    if not line :
+        break
+    print(line)
+f.close()
 print()
+
+print("[ex11]")
+f = open("파일생성.txt",'r')
+lines = f.readlines()
+print(lines)
+for line in lines:
+    print(line)
+f.close()
+print()
+
+print("[ex12]")
+f = open("파일생성.txt",'r')
+data = f.read()
+print(data)
+f.close()
+print()
+
