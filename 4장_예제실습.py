@@ -120,19 +120,23 @@ ex) for i in range(10):
 """
 [파일 생성]
 파일 객체 = open(파일이름, 파일 열기 모드)
+-with 문과 같이 사용하면 with 블록을 벗어나는 순간 열린 파일 객체가 자동으로 close 된다.
 ※ 파일 열기 모드
  - r : 읽기모드 - 파일을 읽기만 할 때 사용
  - w : 쓰기모드 - 파일에 내용을 쓸 때 사용
-                - 파일이 존지할 경우 원래 있던 내용이 모두 사라짐 
+                - 파일이 존지할 경우 원래 있던 내용이 모두 사라짐
  - a : 추가모드 - 파일의 마지막에 새로운 내용을 추가 시킬 때 사용
 """
 
 """
-
+[파일 읽기 종류]
+- readline : 파일 내부의 한 줄 읽기
+- readlines : 파일의 모든 줄을 읽어서 각각의 줄을 요소로 갖는 리스트로 반환.
+- read : 파일의 내용 전체를 문자열로 반환. 즉 파일의 전체 내용이다.
 """
 
 print("[ex9]")
-f = open("파일생성.txt",'w')
+f = open("파일생성.txt", 'w')
 for i in range(1,11):
     data = f"{i}번째 줄입니다.\n"
     f.write(data)
@@ -140,7 +144,7 @@ f.close()
 print()
 
 print("[ex10]")
-f = open("파일생성.txt",'r')
+f = open("파일생성.txt", 'r')
 while True:
     line = f.readline()
     if not line :
@@ -150,7 +154,7 @@ f.close()
 print()
 
 print("[ex11]")
-f = open("파일생성.txt",'r')
+f = open("파일생성.txt", 'r')
 lines = f.readlines()
 print(lines)
 for line in lines:
@@ -159,9 +163,29 @@ f.close()
 print()
 
 print("[ex12]")
-f = open("파일생성.txt",'r')
+f = open("파일생성.txt", 'r')
 data = f.read()
 print(data)
 f.close()
 print()
 
+print("[ex13]")
+f = open("파일생성.txt", 'a')
+for i in range(11,21):
+    data = f"{i}번째 줄입니다.\n"
+    f.write(data)
+f.close()
+print()
+
+print("[ex14]")
+with open("foo.txt", 'w') as f:
+    f.write("Life is too short, you need python")
+print()
+
+print("[ex15]")
+import sys
+
+args = sys.argv[1:]
+for i in args:
+    print(i)
+print()
