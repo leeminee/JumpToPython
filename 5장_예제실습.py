@@ -83,8 +83,55 @@ a = MoreFourCal(4,2)
 print(a.pow())
 print()
 
+"""
+[메서드 오버라이딩(Overriding, 덮어쓰기)]
+- 부모 클래스(상속한 클래스)에 있는 메서드를 동일한 이름으로 다시 만드는 것
+- 위와 같이 메서드를 오버라이딩하면 부모클래스의 메서드 대신 오버라이딩한 메서드가 호출된다.
+"""
+
+"""
+[import]
+- import는 이미 만들어 놓은 파이썬 모듈을 사용할 수 있게 해주는 명령어이다.
+- 현재 디렉터리에 있는 파일이나 파이썬 라이브러리가 저장된 디렉터리에 있는 모듈만 불러올 수 있다.
+- 파이썬 라이브러리는 파이썬을 설치할 때 자동으로 설치되는 파이썬 모듈을 말한다.
+- 모듈이름은 .py 확장자를 제거하고 적어야 한다.
+  import 모듈이름 
+  or 
+  from 모듈이름 import 모듈함수
+  or 
+  from 모듈이름 import *
+"""
+
+"""
+[if __name__ == "__main__"]
+- python mod1.py 처럼 직접 파일을 실행했을 때는 참이 되어 if문 다음 문장이 수행된다.
+  반대로 대화형 인터프리터나 다른 파일에서 이 모듈을 불러서 사용할 때는 거짓이 되어 if문 다음 문장이 수행되지 않는다.
+"""
+
+"""
+[__name__ 변수]
+- 파이썬이 내부적으로 사용하는 특별한 변수 이름이다.
+- python mod1.py 처럼 직접 파일을 실행할 경우 mod1.py의 __name__ 변수에는 __main__ 이 저장된다.
+  하지만 파이썬 셸이나 다른 파이썬 모듈에서 mod1을 import 할 경우에는 mod1.py의 __name__ 변수에는 mod1.py의 모듈 이름 값 mod1이 저장된다.
+"""
+
 print("[예제4]")
+class SafeFourCal(FourCal):
+    def div(self):
+        if self.second == 0:
+            return 0
+        else:
+            return self.first / self.second
+a = SafeFourCal(4,0)
+print(a.div())
 print()
+
+"""
+[sys.path.append("모듈을 저장한 디렉터리")]
+- sys.path 는 파이썬 라이브러리가 설치되어 있는 디렉터리를 보여준다.
+- sys.path.append를 사용해서 사용할 모듈의 저장된 디렉터리를 추가하여 해당 모듈울 불러와 사용할 수 있다. 
+- 'set PYTHONPATH = 모듈을 저장한 디렉터리' 를 사용하면 디렉터리 이동이나 별도의 모듈 추가 작업 없이 해당 모듈을 불러와서 사용할 수 있다. 
+"""
 
 print("[예제5]")
 print()
