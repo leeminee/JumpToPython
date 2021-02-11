@@ -21,9 +21,3 @@ print(getTotalPage(25,10))
 print(getTotalPage(30,10))
 print()
 
-print("[예제3]")
-
-
-print("[예제4]")
-print("[예제5]")
-print("[예제6]")
