@@ -43,17 +43,63 @@ print()
 # print(result)
 # print()
 
-print("[문제7]")
-num = input("구구단을 출력할 숫자를 입력하세요(2~9): ")
-dan = int(num)
-for i in range(1,10):
-    print(dan*i, end=' ')
-print()
+# print("[문제7]")
+# num = input("구구단을 출력할 숫자를 입력하세요(2~9): ")
+# dan = int(num)
+# for i in range(1,10):
+#     print(dan*i, end=' ')
+# print()
 
-print("[문제8]")
-print()
+# print("[문제8]")
+# f = open('abc.txt', 'w')
+# data = """AAA
+# BBB
+# CCC
+# DDD
+# EEE"""
+# f.write(data)
+# f.close()
+# f = open('abc.txt', 'r')
+# lines = f.readlines()
+# f.close()
+# lines.reverse()
+# f = open('abc.txt', 'w')
+# for line in lines:
+#     line = line.strip()
+#     f.write(line)
+#     f.write('\n')
+# f.close()
+# print()
 
 print("[문제9]")
+f = open('sample.txt', 'w')
+data = """70
+60
+55
+75
+95
+90
+80
+80
+85
+100"""
+f.write(data)
+f.close()
+f = open('sample.txt', 'r')
+lines = f.readlines()
+f.close()
+sum = 0
+avg = 0
+count = 0
+for line in lines:
+    line = line.strip()
+    count += 1
+    sum += int(line)
+avg = sum/count
+f = open('result.txt', 'w')
+f.write(str(avg))
+f.close()
+
 print()
 
 print("[문제10]")
