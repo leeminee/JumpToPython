@@ -24,24 +24,24 @@ for number in A:
 print(result)
 print()
 
-# print("[문제5]")
-# def fibo(i):
-#     if i == 0: return 0
-#     if i == 1: return 1
-#     return fibo(i-2) + fibo(i-1)
-# for n in range(int(input())):
-#     print(fibo(n))
-# print()
+print("[문제5]")
+def fibo(i):
+    if i == 0: return 0
+    if i == 1: return 1
+    return fibo(i-2) + fibo(i-1)
+for n in range(int(input())):
+    print(fibo(n))
+print()
 
-# print("[문제6]")
-# a = input()
-# b = a.split(',')
-# print(b)
-# result = 0
-# for num in b:
-#     result += int(num)
-# print(result)
-# print()
+print("[문제6]")
+a = input()
+b = a.split(',')
+print(b)
+result = 0
+for num in b:
+    result += int(num)
+print(result)
+print()
 
 # print("[문제7]")
 # num = input("구구단을 출력할 숫자를 입력하세요(2~9): ")
