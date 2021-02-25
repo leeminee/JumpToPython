@@ -24,14 +24,14 @@ for number in A:
 print(result)
 print()
 
-# print("[문제5]")
-# def fibo(i):
-#     if i == 0: return 0
-#     if i == 1: return 1
-#     return fibo(i-2) + fibo(i-1)
-# for n in range(int(input())):
-#     print(fibo(n))
-# print()
+print("[문제5]")
+def fibo(i):
+    if i == 0: return 0
+    if i == 1: return 1
+    return fibo(i-2) + fibo(i-1)
+for n in range(int(input())):
+    print(fibo(n))
+print()
 
 print("[문제6]")
 a = input()
